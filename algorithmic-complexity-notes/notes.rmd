@@ -1,0 +1,165 @@
+# Priori Analysis vs Posteriori Testing 
+**Posteriori Analysis**
+- Done over the algorithm 
+- Independent of language 
+- Hardware independent
+- Time and space function (polynomial) 
+
+**Posteriori Testin**
+- Done on programs 
+- Language dependent 
+- Hardware dependent 
+- Calculated in seconds and bytes 
+
+# Characteristics of Algorithm 
+
+1. Input : 
+   1. 0 or more inputs 
+2. Output : 
+   1. Must generate output 
+   2. Atleast 1 output 
+3. Definiteness : 
+   1. Every statement needs to be non - ambigious 
+   2. Each steps needs to be solvable 
+4. Finiteness : 
+   1. Needs to have an end - point 
+   2. The algorithm needs to solve 
+   3. There needs to be a solution to the problem that you're solving 
+5. Effectiveness : 
+   1. Every step needs to solve some problem (which is a part of the bigger problem)
+
+### How to write an algorithm : 
+
+Algo swap (a, b){
+    temp = a; 
+    a = b; 
+    b = temp; 
+}
+
+## How to analyze an algorithm 
+
+1. Time 
+   1. How much time does it take ? 
+   2. When we analyze time, we get a function or polynomial (not watch time)
+2. Space
+   1. How much space does the algorithm use ? 
+
+Other factors can also be considered, but these two above ones are the important one 
+
+Some other factors that can be considered : 
+
+1. Network / Data transfer
+2. Power
+3. CPU registers (for machine level / low level programming)
+
+Example : 
+
+Time Analysis : 
+
+Algo swap (a, b){
+    temp = a; .... (1)
+    a = b; ...(1)
+    b = temp; ....(1)
+}
+------------------------
+Total           f(n) = 3
+-------------------------
+^^ O(1) (Order of 1)
+
+Space Analysis : 
+a .... (1)
+b .... (1)
+temp .... (1)
+-----------------
+s(n) = 3
+--------------
+^^ O(1) (Order of 1)
+
+
+***Assumptions***
+1. Every (simple) statement in algorithm takes one unit of time 
+
+### Frequency count method (for algo analysis):
+
+Example 1 : 
+
+Time Complexity Analysis : 
+
+algo sum (a, n){
+    s = 0; ...... (1)
+
+    for (i = 0; i < n; i++){ ..... (n + 1)
+        ------  -----  ----
+           1    n + 1    n 
+        s = s + A[i]
+    }
+    
+    return s; .... (1)
+}
+-----------------------------------
+f(n) :             2n + 3
+-----------------------------------
+
+O(n) (Order of n )
+
+Space Complexity Analysis : 
+A --- n 
+n --- 1
+s --- 1
+i --- 1
+--------------
+s(n) n + 3
+-------------
+O(n) -> order of n 
+
+Example 2 : 
+
+Time Complexity : 
+
+
+Algorithm addMatrix (a , b, n) {
+    for (i = 0 ; i < n; i++){ .... (n + 1)
+        for (j = 0; j < n; j++){ ..... n * (n + 1)
+            c[i,j] = A[i,j] + B[i,j] .... n * (n)
+        }
+    }
+}
+---------------------------------
+f(n) = 2n^2 + 2n + 1 
+---------------------------------
+
+O( n^2) (order of)
+
+Space Complexity : 
+a, b, c - n ^2 
+i, j - 1 
+----------------
+s(n) = 3n^2 + 3
+----------------
+
+O(n^2) (order of )
+
+
+Example 3 : 
+
+algo multiply (a, b, n){
+    for (i = 0; i < n; i++){ ...... (n + 1)
+        for (j = 0; j < n; j++){ ..... n (n + 1)
+            c[i,j] = 0;          .......n  * n 
+            for (k = 0; k < n; k++){ .......n * n * (n + 1)
+                c[i,j] = c[i,j] + A[i,k] * B[k, j]; .... n * n * n 
+            }
+        }
+    }
+}
+---------------------------------
+f(n): 2n^3 + 3n ^2 + 2n + 1
+--------------------------------
+
+O(n^3) (Order of)
+
+Abdul Bari - algorithms, 1.4
+
+
+
+
